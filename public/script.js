@@ -2,6 +2,7 @@
 class CalendarApp {
     constructor() {
         this.currentDate = new Date();
+        this.selectedDate = null;
         this.events = JSON.parse(localStorage.getItem('calendarEvents')) || {};
         this.monthNames = [
             'January', 'February', 'March', 'April', 'May', 'June',
@@ -122,6 +123,14 @@ class CalendarApp {
         
         // Add click event to select date
         dayElement.addEventListener('click', () => {
+            // Remove previous selection
+            document.querySelectorAll('.day.selected').forEach(el => {
+                el.classList.remove('selected');
+            });
+            
+            // Add selection to clicked day
+            dayElement.classList.add('selected');
+            this.selectedDate = dateKey;
             this.eventDateInput.value = dateKey;
         });
         
