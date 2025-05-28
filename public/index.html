@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="calendar-container">
+        <div class="calendar-header">
+            <button id="prevMonth" class="nav-btn">&lt;</button>
+            <h1 id="monthYear"></h1>
+            <button id="nextMonth" class="nav-btn">&gt;</button>
+        </div>
+        
+        <div class="calendar-grid">
+            <div class="day-header">Sun</div>
+            <div class="day-header">Mon</div>
+            <div class="day-header">Tue</div>
+            <div class="day-header">Wed</div>
+            <div class="day-header">Thu</div>
+            <div class="day-header">Fri</div>
+            <div class="day-header">Sat</div>
+            
+            <div id="calendarDays" class="calendar-days"></div>
+        </div>
+        
+        <div class="event-section">
+            <h3>Add Event</h3>
+            <input type="date" id="eventDate" />
+            <input type="text" id="eventTitle" placeholder="Event title" />
+            <button id="addEvent">Add Event</button>
+            
+            <div id="eventsList" class="events-list">
+                <h4>Upcoming Events</h4>
+                <div id="eventsContainer"></div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
